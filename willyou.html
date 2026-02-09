@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will You Marry Me?</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+  background: #ffe6f0;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+#yesBtn {
+  background: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+#noBtn {
+  background: #f44336;
+  color: white;
+  padding: 20px 40px;
+  font-size: 24px;
+  margin-left: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="question">Will you marry me? 💍</h1>
+
+<button id="yesBtn">Yes</button>
+<button id="noBtn">No</button>
+
+<script>
+let step = 0;
+
+const messages = [
+  "Are you sure? 😢",
+  "Really sure?? 🥺",
+  "Think again... 😭",
+  "Last chance! 😤",
+  "Don’t break my heart 💔",
+  "I will ask again 😈",
+  "Still no?? 😡",
+  "Okay final final chance 😭",
+  "You cannot escape 😎",
+  "Say YES already ❤️"
+];
+
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const question = document.getElementById("question");
+
+noBtn.onclick = nextStep;
+
+// YES behaves like NO (hard to press)
+yesBtn.onclick = nextStep;
+
+function nextStep() {
+  if (step < messages.length) {
+    question.innerText = messages[step];
+
+    // Make YES bigger each time
+    let size = 12 + step * 6;
+    yesBtn.style.fontSize = size + "px";
+    yesBtn.style.padding = (5 + step * 3) + "px " + (10 + step * 5) + "px";
+
+    // Move YES randomly (hard to press)
+    yesBtn.style.position = "absolute";
+    yesBtn.style.top = Math.random() * 70 + "%";
+    yesBtn.style.left = Math.random() * 70 + "%";
+
+    step++;
+  } else {
+    question.innerText = "YAYYYYY ❤️ She said YES 💍🎉";
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    document.body.style.background = "#ffb3d9";
+  }
+}
+</script>
+
+</body>
+</html>
