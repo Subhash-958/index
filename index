@@ -35,11 +35,6 @@ button {
   background: white;
   color: #ff4d6d;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
 }
 
 .hidden {
