@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff4d6d, #ff99ac);
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  background: white;
+  color: #ff4d6d;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.heart {
+  font-size: 50px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Happy Valentine's Day ❤️</h1>
+  <p>Someone has a special message for you 💌</p>
+
+  <button onclick="showMessage()">Open Message</button>
+
+  <div id="msg" class="hidden">
+    <p style="margin-top:20px;">
+      You make my world brighter, my heart happier,
+      and my life more beautiful ❤️
+    </p>
+    <div class="heart">❤️</div>
+  </div>
+</div>
+
+<script>
+function showMessage() {
+  document.getElementById("msg").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
